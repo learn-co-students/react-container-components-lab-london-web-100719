@@ -23,7 +23,10 @@ export default class SearchableMovieReviewsContainer extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    this.getMovies();
+    this.state.searchTerm.length > 0
+      ? this.getMovies()
+      : this.setState({ reviews: [] });
+    this.setState({ searchTerm: "" });
   };
 
   updateSearchTermInput = event => {
