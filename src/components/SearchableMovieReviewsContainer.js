@@ -30,13 +30,10 @@ export default class SearchableMovieReviewsContainer extends Component {
     this.setState({ searchTerm: event.target.value });
   };
 
-  componentDidMount() {
-    this.getMovies(this.state.searchTerm);
-  }
-
   render() {
     return (
       <div className="searchable-movie-reviews">
+        <h1>Search for Reviews</h1>
         <form onSubmit={this.handleSubmit}>
           <input
             type="text"
